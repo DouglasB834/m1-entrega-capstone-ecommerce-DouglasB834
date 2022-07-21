@@ -5,14 +5,14 @@ let listaProdutos   = document.querySelector(".listaProdutos");
 let listaCarinho    = document.querySelector(".listaCarinho");
 let qtd_itens       = document.querySelector(".qtd_itens");
 let valorCarinho    = document.querySelector(".total");
-let listaCabecalho = document.querySelector(".listaCabecalho")
-let textCarinho = document.createElement("div")
-let carinho =[] ;
-let tagproduto =[]
+let listaCabecalho  = document.querySelector(".listaCabecalho")
+let textCarinho     = document.createElement("div")
+let carinho         =[] ;
+let tagproduto      =[]
 
-let carinhoDeCompras = document.querySelector(".carinhoDeCompras")
-let cardCarinho = document.querySelector(".card")
-let closeCard = document.querySelector(".close")
+let carinhoDeCompras    = document.querySelector(".carinhoDeCompras")
+let cardCarinho         = document.querySelector(".card")
+let closeCard           = document.querySelector(".close")
 //carinhoDeCompras.open
 cardCarinho.addEventListener("click", ()=> carinhoDeCompras.classList.toggle("open") )
 
@@ -46,18 +46,16 @@ function listarProdutos(produto, secao) {
                 
             }
         }else{
-            console.log("esta chegando a hora")
+            console.log(" quase la ")
            
             textCarinho.classList.add("carinhoVazio")
             textCarinho.innerHTML = `
             <h2>carinho vazio </h2>
+            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
             <p>Adicione itens</p>`
             listaCarinho.append(textCarinho)
-            
-   
-        }
-       
-       
+          
+        }   
 }
                         //tag UL html 
 listarProdutos(produtos, listaProdutos)
@@ -120,13 +118,13 @@ listaProdutos.addEventListener("click", addCarinho )
 
 
 function criarCarinho(itensCarinho ) {
-    qtd_itens.innerHTML = ""
-    qtd_itens.innerText = `${carinho.length}`
-    valorCarinho.innerHTML = ""
+    qtd_itens.innerHTML     = ""
+    qtd_itens.innerText     = `${carinho.length}`
+    valorCarinho.innerHTML  = ""
 
-    img   = itensCarinho.img
-    nome  = itensCarinho.nameItem
-    preco =itensCarinho.value    
+    img     =   itensCarinho.img
+    nome    =   itensCarinho.nameItem
+    preco   =   itensCarinho.value    
 
     let tagLi               = document.createElement("li")
 
@@ -146,8 +144,8 @@ function criarCarinho(itensCarinho ) {
     tagImg.src          =  img
     tagImg.alt          =  nome
     tagH4.innerText     =  nome
-    tagSpan.innerText   =  preco
-    tagButton.innerHTML = `Remover Produto <i class="fa fa-trash" aria-hidden="true"></i>`
+    tagSpan.innerText   = `R$${ preco}`
+    tagButton.innerHTML = `Remover Produto  <i class="fa fa-trash" aria-hidden="true"></i>`
     tagButton.id        = itensCarinho.id
     
     somarCarinho(carinho)
@@ -167,7 +165,7 @@ function somarCarinho(valorTotal) {
         let somar = valorTotal[key].value
         total +=somar
     }
-    valorCarinho.innerText = `R$${total}`
+    valorCarinho.innerText = `R$${total.toFixed(2)}`
     return total
    
 }
@@ -179,18 +177,11 @@ function removerItem(event) {
     if (indexItem.tagName == "BUTTON" || indexItem.tagName == "I") {  
         let idProduto = indexItem.id
         
-        valorCarinho.innerText = `R$${0}`
-        qtd_itens.innerText = `${0}`
- 
-        let indexProduto = carinho.find(function (getID) {     
-            if (getID.id == idProduto) {                
-                return true
-            }else{
-                return false
-            } 
-            
-        })   
-        console.log(indexProduto)
+        valorCarinho.innerText  = `R$${0}`
+        qtd_itens.innerText     = `${0}`
+        
+        let indexProduto        = carinho.find( getID => getID.id == idProduto)   
+        
         carinho.splice(indexProduto,1)
         
         listarProdutos(carinho, listaCarinho)
@@ -203,27 +194,29 @@ listaCarinho.addEventListener("click",removerItem )
 
 // ========Pesquisar =============
 
-let inputpesquisartop  = document.querySelector(".inputPesquisar");
-let formPesquisatop  = document.querySelector(".pesquisaTop");
+let inputpesquisartop   = document.querySelector(".inputPesquisar");
+let formPesquisatop     = document.querySelector(".pesquisaTop");
 
 
-let inputpesquisar  = document.querySelector(".pesquisar");
-let formPesquisa  = document.querySelector(".pesquisa");
+let inputpesquisar      = document.querySelector(".pesquisar");
+let formPesquisa        = document.querySelector(".pesquisa");
 
 let todos = document.querySelector(".todos")
 
 
 // pesquisa top 
-function informação(pesquisa) {
-    let valorPesquisa  = inputpesquisartop.value.trim()
+function informacao(pesquisa) {
+    let valorPesquisa  = inputpesquisartop.value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
     let resultPesquisa  =[]
     for (let i = 0; i < produtos.length; i++) { 
-        let nomeProtudos = produtos[i].nameItem.toLowerCase()
-        let nomeTag = produtos[i].tag.toLowerCase()
+        let nomeProtudos = produtos[i].nameItem.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        let nomeTag = produtos[i].tag.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
         let pesquisaUsuario = valorPesquisa.toLowerCase()
         
         if (nomeProtudos.includes(pesquisaUsuario) || nomeTag.includes(pesquisaUsuario)) {            
             resultPesquisa.push(produtos[i])
+        }else{
+
         }
         
     }//for 
@@ -232,20 +225,22 @@ function informação(pesquisa) {
    
 }
 
-formPesquisatop.addEventListener("submit", (event)=>{
+formPesquisatop.addEventListener("keyup", (event)=>{
     event.preventDefault ()
-    informação()
-    inputpesquisartop.value = ""
+    informacao()
+    // inputpesquisartop.value = ""
+    
 })
 
 
 // Pesquisar normal  
-function informaçãos(pesquisa) {
-    let valorPesquisa  = inputpesquisar.value.trim()
+function informacaos(pesquisa) {
+    let valorPesquisa  = inputpesquisar.value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
     let resultPesquisa  =[]
     for (let i = 0; i < produtos.length; i++) { 
-        let nomeProtudos = produtos[i].nameItem.toLowerCase()
-        let nomeTag = produtos[i].tag.toLowerCase()
+        let nomeProtudos = produtos[i].nameItem.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        let nomeTag = produtos[i].tag.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        
         let pesquisaUsuario = valorPesquisa.toLowerCase()
         
         if (nomeProtudos.includes(pesquisaUsuario) || nomeTag.includes(pesquisaUsuario)) {            
@@ -259,10 +254,10 @@ function informaçãos(pesquisa) {
 }
 
 
-formPesquisa.addEventListener("submit", (event)=>{
+formPesquisa.addEventListener("keyup", (event)=>{
     event.preventDefault ()
-    informaçãos()
-    inputpesquisar.value = ""
+    informacaos()
+    // inputpesquisar.value = ""
 })
 
 //pesquisa nav
@@ -298,4 +293,5 @@ function addCarinho(event) {
         listarProdutos(carinho, listaCarinho)
     }
    
+    
 }

@@ -4,7 +4,7 @@ const produtos = [
   {
     id: 1,
     img: "src/img/jaqueta.svg",
-    nameItem: "Lightweight Jacket jaqueta",
+    nameItem: "Lightweight jaqueta",
     description:
       "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
     value: 175.99,
@@ -14,7 +14,7 @@ const produtos = [
   {
     id: 2,
     img: "src/img/acessórioOculos.jpg",
-    nameItem: "Round Polarized Sunglasses  Oculos",
+    nameItem: "Oculos de sol ",
     description:
       "Oculos de sol  estiloso para seu verão ...",
     value: 120.50,
@@ -24,7 +24,7 @@ const produtos = [
   {
     id: 3,
     img: "src/img/tenis esportivo.jpg",
-    nameItem: "Adidas QT Racer 2.0 running Tenis",
+    nameItem: "Adidas QT Racer Tenis",
     description:
       "O gorro  chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
     value: 129.90,
@@ -64,7 +64,7 @@ const produtos = [
   {
     id: 7,
     img: "src/img/camiseta_preta.svg",
-    nameItem: "T-Shirt",
+    nameItem: "T-Shirt, Camisa",
     description:
       "Esta t-shirt é imprescindível no seu guarda-roupa, combinando o ...",
     value: 99.98,
@@ -94,7 +94,7 @@ const produtos = [
   {
     id: 10,
     img: "src/img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt camisa ",
+    nameItem: "Short-Sleeve Camisa ",
     description:
       "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
     value: 99.98,

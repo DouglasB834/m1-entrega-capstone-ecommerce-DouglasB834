@@ -15,12 +15,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+       
     <!-- Link Config CSS -->
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/style.css">
     <!-- Link Config JavaScript -->
     <script defer src="src/js/database.js"></script>
     <script defer src="src/js/index.js"></script>
+   
     <title>Weartake</title>
 </head>
 
@@ -52,9 +54,8 @@
         </div>      
 
     </header><!-- End Header -->
-
     <!-- Start main e Sections -->
-    <div class="container">
+    <div class="container produtosEstilo">
         
         <main >
             <!-- Start  Produtos -->
@@ -65,9 +66,14 @@
                 </form>        
             </div>
             <div class="boxProdutos">
-                
-                <section class="produtos" id="todos">
+
+               
+
+                <section  class="produtos" id="todos">
                     <ul class="listaProdutos">
+                        <div class="semProduto">
+                            <h2>Produto Fora de Estoque </h2>
+                        </div>
                         <li>
                             <div class="box_img">
                                 <figure><img src="src/img/Camisasinza.jpg" alt=""></figure>
@@ -107,6 +113,7 @@
                     <ul class="listaCarinho">
                         <div class="carinhoVazio">
                             <h2>carinho vazio </h2>
+                            <i class="fa fa-cart-arrow-down carinho" aria-hidden="true"></i>
                             <p>Adicione itens</p>
                         </div> <!-- carinho vazio  -->
 
@@ -119,7 +126,7 @@
                                 <span>R$ 100.00</span>
                                 <button class="btnRemoverProduto">Remove Produto</button>
                             </div>
-                        </li>         -->
+                        </li>  -->
                         
                     </ul>
 
@@ -134,9 +141,14 @@
             </div> <!-- End Section pesquisa e carinho  -->
         </main><!-- End main e Sections -->
     </div>
+    
+    <footer>
+        <div class="container-footer">
+            <p>Douglas S Broges @Kenzie Academi</p>
 
-    <!-- <footer>Douglas S Broges @Kenzie Academi</footer> -->
-
+        </div>
+    </footer>
+   
 </body>
 
 </html>
