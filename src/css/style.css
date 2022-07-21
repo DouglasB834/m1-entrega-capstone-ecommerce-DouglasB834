@@ -135,6 +135,35 @@ body {
     top:0; right: 0;
 }
 
+.fogo {
+       float: left;
+    background: linear-gradient(360deg,#353dbb,#1D8E92,#b8905380);
+    height: 33px;
+    border-radius: 47%;
+    animation: fogo-gradient 3s linear infinite;
+    background-size: 200% 200%;
+    margin: auto;
+    padding: 1px;
+}
+
+
+@keyframes fogo-gradient {
+    25%{
+        background-position:left bottom ;
+    }
+    50%{
+        background-position: right bottom ;
+    }
+    70%{
+        background-position:right top;
+    }
+    100%{
+        background-position:left top ;
+    }
+}
+
+
+
 /* ============ Estilos main e Sections ============= */
 
 main {
@@ -511,8 +540,10 @@ footer {
         right: 25%;
         width: 50%;
         transition: .3s linear;
+        position: fixed;
     }
     .carinhoDeCompras.open{
+       
         display: block;
     }
     .close{
