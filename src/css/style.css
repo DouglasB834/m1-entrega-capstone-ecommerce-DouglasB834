@@ -1,0 +1,510 @@
+/*======== Variavel Geral =========== */
+html {
+    /* mudar font  */
+    font-size: 80.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: rgb(1, 120, 124);
+}
+
+:root {
+
+    --cor-primaria: #2e245e;
+    --cor-segundaria: #37268c;
+
+    /* Cor dos texto e btn  CINZA */
+    --gray-100: #333;
+    --gray-50: #242424;
+    /* fundo das fotos e carde vazio  */
+    --gray-0: #f5f5f5;
+
+    /* Fonts */
+
+}
+
+::selection {
+    background: rgb(3, 172, 172);
+}
+
+.cabecalho {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    width: 100%;
+    background: #fff;
+    height: 5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    box-shadow: 4px -3px 9px 0px var(--gray-50);
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    justify-content: center;
+}
+
+
+/* ========== Estilo  Cabeçaho ============ */
+.container .logo a {
+    color: var(--gray-50);
+}
+
+.container .logo {
+    font-size: 1.1rem;
+}
+
+.container nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.todos, .card {
+    color: var(--gray-100);
+    font-weight: 600;
+    margin: 1rem;
+
+}
+.card{
+    color: var(--gray-100);
+    font-weight: 600;
+    margin: .5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.container nav ul {
+    display: flex;
+    margin-top: .9rem;
+    gap: 1.7rem;
+    justify-content: flex-end;
+
+
+}
+
+.container nav ul li {}
+
+.container nav ul li a {
+    position: relative;
+    color: var(--gray-50);
+    font-size: 1rem;
+    padding: .4rem 0;
+}
+
+.container nav ul li a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: .1rem;
+    background: var(--cor-segundaria);
+    transition: .3s linear;
+}
+
+.container nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.container nav ul li a:hover {
+    color: rgb(2, 131, 148);
+}
+
+/* pestilo pesquisa  */
+.search-bar-container{
+    margin-top: .5rem;
+    display: none;
+    /* position: relative; */
+    width: 100%;
+}
+.search{
+    display: flex;
+    top:0; right: 0;
+}
+
+/* ============ Estilos main e Sections ============= */
+
+main {
+    
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.boxProdutos {
+    margin-right: 1rem;
+    background: rgb(255, 255, 255);
+    width: 70%;
+
+}
+
+.boxProdutos .produtos {
+    padding: 1.5rem;
+}
+
+.boxProdutos .produtos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.boxProdutos .produtos ul li {
+    max-width: 262px;
+    border: .2rem solid transparent;
+    transition: .1s linear;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.boxProdutos .produtos ul li:hover {
+    border: .2rem solid var(--cor-segundaria);
+}
+
+.boxProdutos .produtos ul li .box_img {
+    text-align: center;
+    background: var(--gray-0);
+    border-radius: .5rem;
+    height: 12rem;
+
+}
+
+.boxProdutos .produtos ul li .box_img figure {}
+
+.boxProdutos .produtos ul li .box_img img {}
+
+
+.boxProdutos .produtos ul li .box_content {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    height: 13rem;
+    padding: .8rem;
+
+}
+
+.boxProdutos .produtos ul li .box_content a {
+    background: var(--cor-primaria);
+    color: var(--gray-0);
+    width: 7rem;
+    margin-top: .2rem;
+    padding: .4rem .1rem;
+    text-align: center;
+    border-radius: .2rem;
+
+
+}
+
+.boxProdutos .produtos ul li .box_content h3 {
+    /* margin:  1rem 0; */
+    font-size: 1.3rem;
+}
+
+.boxProdutos .produtos ul li .box_content p {
+    font-size: .9rem;
+    line-height: 1.7rem;
+}
+
+.boxProdutos .produtos ul li .box_content span {
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--cor-primaria);
+
+}
+
+.boxProdutos .produtos ul li .box_content button {
+    width: 11rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background: none;
+    color: var(--gray-50);
+    border-bottom: .1rem transparent var(--cor-segundaria);
+    transition: .3s linear;
+    cursor: pointer;
+
+}
+
+.boxProdutos .produtos ul li .box_content button:hover {
+    border-bottom: .1rem solid;
+    color: var(--cor-primaria);
+
+}
+
+.boxProdutos .produtos ul li .box_content {}
+
+
+/* ========== Estilo btn Pesquisa =========== */
+.aside {
+    background: #fff;
+    width: 30%;
+    /* height: 20rem; */
+}
+
+.aside .box_pesquisar {
+    /* display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: .4rem; */
+
+}
+
+.aside .box_pesquisar form {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: .4rem;
+
+}
+
+.aside .box_pesquisar .pesquisar ,.inputPesquisar  {
+    background: var(--gray-0);
+    height: 3.1rem;
+    padding: 0 .9rem;
+    outline: 0;
+    width: 100%;
+}
+
+.aside .box_pesquisar .btnPesquisa, .btnPesquisa {
+    background: var(--cor-primaria);
+    color: var(--gray-0);
+    height: 3.1rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 0 1.2rem;
+}
+
+.aside .box_pesquisar .btnPesquisa i {
+    font-size: 1.8rem;
+}
+
+.aside .box_pesquisar .btnPesquisa:hover {
+    background: var(--cor-segundaria);
+}
+
+
+/* ============ Estilo Carinho ============ */
+.carinhoVazio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: var(--gray-0);
+    height: 15rem;
+
+}
+
+/* com Item  */
+
+.carinhoDeCompras h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--gray-0);
+    margin-bottom: 1rem;
+    background: var(--cor-segundaria);
+}
+
+.carinhoDeCompras ul {
+    background: var(--gray-0);
+    height: 20rem;
+    overflow-x: hidden;
+    justify-content: center;
+}
+
+.carinhoDeCompras ul li {
+    width: 100%;
+    display: flex;
+    padding: 0.5rem;
+
+}
+
+.carinhoDeCompras ul li .box_imgCarinho {
+    display: flex;
+    height: 6rem;
+    align-items: center;
+    background-color: #fff;
+}
+
+.carinhoDeCompras ul li .box_imgCarinho img {
+    max-width: 6rem;
+    width: 100%;
+
+}
+
+.carinhoDeCompras ul li .info_itens {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem;
+
+}
+
+
+.carinhoDeCompras ul li h4 {}
+
+.carinhoDeCompras ul li span {
+    font-weight: 600;
+    letter-spacing: .1rem;
+
+}
+
+.carinhoDeCompras ul li button {
+    color: var(--gray-100);
+    background: var(--gray-0);
+    transition: .2s linear;
+    border-bottom: .1rem solid transparent;
+    cursor: pointer;
+}
+
+.carinhoDeCompras ul li button:hover {
+    border-bottom: .1rem solid red;
+}
+
+/* =========== Estilo valor total Carinho ============ */
+
+.valor_totalCarinho {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    flex-direction: column;
+    justify-content: center;
+    height: 8rem;
+    color: var(--gray-0);
+    background: var(--gray-100);
+}
+
+.valor_totalCarinho p {
+    display: flex;
+    font-weight: 600;
+    justify-content: space-between;
+    letter-spacing: .1rem;
+}
+
+.valor_totalCarinho span {}
+
+.valor_totalCarinho button {
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .2rem 0;
+}
+
+.valor_totalCarinho button:hover {
+    background: var(--cor-segundaria);
+    color: var(--gray-0);
+}
+
+.valor_totalCarinho button {
+    border-radius: .5rem;
+}
+
+/* ===========Estilo Foooter ========== */
+footer {
+    margin-top: 2rem;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background: var(--gray-0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================== Stilo @media  responsivo ================== */
+
+@media (max-width:1550px) {
+
+    html {
+        font-size: 75%;
+    }
+
+
+}
+
+@media (max-width:700px) {
+    html {
+        font-size: 70%;
+    }
+
+    main {
+        margin-top: 5rem;
+        flex-wrap: wrap;
+    }
+    .search-bar-container{
+        display: flex;
+        justify-content: center;
+       
+    }
+    .search {
+        width: 70%;
+    }
+
+    .box_pesquisar{
+        display: none;
+    }
+
+   
+
+    .btnPesquisa{
+        height: 3.1rem;
+        padding: 0 0.5rem;
+        cursor: pointer;
+        font-weight: 500;
+        padding: 0 1rem;
+    }
+    
+
+    .container .logo {
+        font-size: .9rem;
+    }
+
+    .container nav ul ,.todos, .card {
+        gap: .4rem;
+        margin-top: .5rem;
+
+
+    }
+
+    .aside {
+        width: 70%;
+    }
+
+}

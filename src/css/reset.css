@@ -1,0 +1,10 @@
+/* ESTILOS GERAIS */
+html, body, figure, header,img, div, section, article, input, button, textarea, p, h1, h2, h3, h4, h5, h6, ul, li, a,form, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+}
