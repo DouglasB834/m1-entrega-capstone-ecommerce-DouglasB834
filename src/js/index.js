@@ -9,10 +9,21 @@ let listaCabecalho = document.querySelector(".listaCabecalho")
 let textCarinho = document.createElement("div")
 let carinho =[] ;
 let tagproduto =[]
+
 let carinhoDeCompras = document.querySelector(".carinhoDeCompras")
 let cardCarinho = document.querySelector(".card")
+let closeCard = document.querySelector(".close")
 //carinhoDeCompras.open
 cardCarinho.addEventListener("click", ()=> carinhoDeCompras.classList.toggle("open") )
+
+closeCard.addEventListener('click', ()=>{
+    carinhoDeCompras.classList.remove("open")
+});
+
+window.onscroll = () => {
+    carinhoDeCompras.classList.remove("open")
+}
+
 
 function listarProdutos(produto, secao) {
     secao.innerHTML= ""

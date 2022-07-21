@@ -4,7 +4,7 @@ const produtos = [
   {
     id: 1,
     img: "src/img/jaqueta.svg",
-    nameItem: "Lightweight Jacket",
+    nameItem: "Lightweight Jacket jaqueta",
     description:
       "Adicione um pouco de energia ao seu guarda-roupa de inverno com esta jaqueta vibrante...",
     value: 175.99,
@@ -14,19 +14,19 @@ const produtos = [
   {
     id: 2,
     img: "src/img/acessórioOculos.jpg",
-    nameItem: "Round Polarized Sunglasses",
+    nameItem: "Round Polarized Sunglasses  Oculos",
     description:
-      "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
+      "Oculos de sol  estiloso para seu verão ...",
     value: 120.50,
     addCart: "Adicionar ao carrinho",
-    tag: "Acessórios",
+    tag: "Acessórios ",
   },
   {
     id: 3,
     img: "src/img/tenis esportivo.jpg",
-    nameItem: "Adidas QT Racer 2.0 running",
+    nameItem: "Adidas QT Racer 2.0 running Tenis",
     description:
-      "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
+      "O gorro  chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
     value: 129.90,
     addCart: "Adicionar ao carrinho",
     tag: "Calçados",
@@ -34,9 +34,9 @@ const produtos = [
   {
     id: 4,
     img: "src/img/gorro.svg",
-    nameItem: "Black Hat",
+    nameItem: "Black Hat gorro",
     description:
-      "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
+      "O gorro  chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
     value: 560.50,
     addCart: "Adicionar ao carrinho",
     tag: "Acessórios",
@@ -44,9 +44,9 @@ const produtos = [
   {
     id: 5,
     img: "src/img/Camisasinza.jpg",
-    nameItem: "gray t-shirt",
+    nameItem: "gray t-shirt Camisa",
     description:
-      "O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
+      "O gorro  chegou! Esta beldade bordada tem um ajuste confortável que garante que...",
     value: 560.50,
     addCart: "Adicionar ao carrinho",
     tag: "Camisetas",
@@ -54,7 +54,7 @@ const produtos = [
   {
     id: 6,
     img: "src/img/mascara.svg",
-    nameItem: "Mask",
+    nameItem: "Mask ",
     description:
       "Esta máscara facial durável é feita de duas camadas de tecido tratado e possui ...",
     value: 15.99,
@@ -94,7 +94,7 @@ const produtos = [
   {
     id: 10,
     img: "src/img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt",
+    nameItem: "Short-Sleeve T-Shirt camisa ",
     description:
       "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
     value: 99.98,
@@ -104,7 +104,7 @@ const produtos = [
   {
     id: 11,
     img: "src/img/acessorioBolsa.jpg",
-    nameItem: " men's leather bag",
+    nameItem: " men's leather bag bolsa",
     description:
       "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de p...",
     value: 240.00,
@@ -114,7 +114,7 @@ const produtos = [
   {
     id: 12,
     img: "src/img/tenisNike.jpg",
-    nameItem: "Champion Packable Jacket",
+    nameItem: "Tenis Nike",
     description:
       "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de p...",
     value: 250.00,
@@ -134,7 +134,7 @@ const produtos = [
   {
     id: 14,
     img: "src/img/acessoriorelogio.jpg",
-    nameItem: "complete accessory kit",
+    nameItem: "ket accessory kit + relogio",
     description:
       "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de p...",
     value: 250.00,

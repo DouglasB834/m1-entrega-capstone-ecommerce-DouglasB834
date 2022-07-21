@@ -318,6 +318,13 @@ main {
     color: var(--gray-0);
     margin-bottom: 1rem;
     background: var(--cor-segundaria);
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.close{
+    display: none;
 }
 
 .carinhoDeCompras ul {
@@ -469,6 +476,9 @@ footer {
         margin-top: 5rem;
         flex-wrap: wrap;
     }
+    .container .logo {
+        font-size: .9rem;
+    }
     .search-bar-container{
         display: flex;
         justify-content: center;
@@ -487,11 +497,31 @@ footer {
         font-weight: 500;
         padding: 0 1rem;
     }
-    
 
-    .container .logo {
-        font-size: .9rem;
+    .cor{
+        background: var(--gray-100);
     }
+
+    .carinhoDeCompras{
+        display: none ;
+        position: absolute;
+        top: 19%;
+        right: 25%;
+        width: 50%;
+        transition: .3s linear;
+    }
+    .carinhoDeCompras.open{
+        display: block;
+    }
+    .close{
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    .close:hover{
+        color: rgb(255, 123, 0);
+    }
+
 
     .container nav ul ,.todos, .card {
         gap: .4rem;
