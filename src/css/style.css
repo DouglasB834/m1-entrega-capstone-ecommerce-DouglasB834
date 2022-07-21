@@ -71,7 +71,8 @@ body {
 .todos, .card {
     color: var(--gray-100);
     font-weight: 600;
-    margin: 1rem;
+    font-size: 1.1rem;
+    margin: .9rem;
 
 }
 .card{
@@ -476,13 +477,9 @@ footer {
     .search {
         width: 70%;
     }
-
     .box_pesquisar{
         display: none;
     }
-
-   
-
     .btnPesquisa{
         height: 3.1rem;
         padding: 0 0.5rem;

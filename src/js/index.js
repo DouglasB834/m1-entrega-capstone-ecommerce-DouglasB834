@@ -6,13 +6,18 @@ let listaCarinho    = document.querySelector(".listaCarinho");
 let qtd_itens       = document.querySelector(".qtd_itens");
 let valorCarinho    = document.querySelector(".total");
 let listaCabecalho = document.querySelector(".listaCabecalho")
-
+let textCarinho = document.createElement("div")
 let carinho =[] ;
 let tagproduto =[]
+let carinhoDeCompras = document.querySelector(".carinhoDeCompras")
+let cardCarinho = document.querySelector(".card")
+//carinhoDeCompras.open
+cardCarinho.addEventListener("click", ()=> carinhoDeCompras.classList.toggle("open") )
 
 function listarProdutos(produto, secao) {
     secao.innerHTML= ""
-
+    
+    
     if(produto.length >0){
             for (let i = 0; i < produto.length; i++) {
                 
@@ -33,15 +38,17 @@ function listarProdutos(produto, secao) {
         }else{
             console.log("esta chegando a hora")
 
-            let textCarinho = document.createElement("div")
+           
             textCarinho.classList.add("carinhoVazio")
             textCarinho.innerHTML = `
             <h2>carinho vazio </h2>
             <p>Adicione itens</p>`
             listaCarinho.append(textCarinho)
+            
    
         }
-    
+       
+       
 }
                         //tag UL html 
 listarProdutos(produtos, listaProdutos)
@@ -52,7 +59,7 @@ function addCarinho(event) {
     if(addCarinho.tagName == "BUTTON" ){
         let pegarID  = addCarinho.id       
         let produto = produtos.find( product => product.id == pegarID )   
-        
+
         carinho.push(produto)
         listarProdutos(carinho, listaCarinho)
     }
@@ -161,12 +168,20 @@ function removerItem(event) {
     let indexItem = event.target 
 
     if (indexItem.tagName == "BUTTON" || indexItem.tagName == "I") {  
-    
+        let idProduto = indexItem.id
+        
         valorCarinho.innerText = `R$${0}`
         qtd_itens.innerText = `${0}`
  
-        let indexProduto = carinho.find( (getID) => getID.id == indexItem.id ) 
-
+        let indexProduto = carinho.find(function (getID) {     
+            if (getID.id == idProduto) {                
+                return true
+            }else{
+                return false
+            } 
+            
+        })   
+        console.log(indexProduto)
         carinho.splice(indexProduto,1)
         
         listarProdutos(carinho, listaCarinho)
@@ -181,14 +196,20 @@ listaCarinho.addEventListener("click",removerItem )
 //Acessorio
 // ========Pesquisar =============
 
+let inputpesquisartop  = document.querySelector(".inputPesquisar");
+let formPesquisatop  = document.querySelector(".pesquisaTop");
+
+
 let inputpesquisar  = document.querySelector(".pesquisar");
 let formPesquisa  = document.querySelector(".pesquisa");
 
 let todos = document.querySelector(".todos")
-console.log(todos)
-function informaçãos(pesquisa) {
-    let valorPesquisa  = inputpesquisar.value.trim()
 
+
+// pesquisa top 
+
+function informação(pesquisa) {
+    let valorPesquisa  = inputpesquisartop.value.trim()
     let resultPesquisa  =[]
     for (let i = 0; i < produtos.length; i++) { 
         let nomeProtudos = produtos[i].nameItem.toLowerCase()
@@ -205,14 +226,45 @@ function informaçãos(pesquisa) {
    
 }
 
+formPesquisatop.addEventListener("submit", (event)=>{
+    event.preventDefault ()
+    informação()
+    inputpesquisartop.value = ""
+})
+
+
+// Pesquisar normal  
+function informaçãos(pesquisa) {
+    let valorPesquisa  = inputpesquisar.value.trim()
+    let resultPesquisa  =[]
+    for (let i = 0; i < produtos.length; i++) { 
+        let nomeProtudos = produtos[i].nameItem.toLowerCase()
+        let nomeTag = produtos[i].tag.toLowerCase()
+        let pesquisaUsuario = valorPesquisa.toLowerCase()
+        
+        if (nomeProtudos.includes(pesquisaUsuario) || nomeTag.includes(pesquisaUsuario)) {            
+            resultPesquisa.push(produtos[i])
+        }
+        
+    }//for 
+
+    listarProdutos(resultPesquisa, listaProdutos)
+   
+}
+
+
 formPesquisa.addEventListener("submit", (event)=>{
     event.preventDefault ()
     informaçãos()
     inputpesquisar.value = ""
 })
 
+
+
+//pesquisa nav
 function pesquisaCabecalho(event) {
     let itensMenu = event.target
+    textCarinho=""
     let  produtofiltrado = produtos.filter( produto => produto.tag == itensMenu.id )
     
     listarProdutos(produtofiltrado, listaProdutos)
