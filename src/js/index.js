@@ -27,8 +27,7 @@ window.onscroll = () => {
 
 function listarProdutos(produto, secao) {
     secao.innerHTML= ""
-    
-    
+  
     if(produto.length >0){
             for (let i = 0; i < produto.length; i++) {
                 
@@ -48,7 +47,6 @@ function listarProdutos(produto, secao) {
             }
         }else{
             console.log("esta chegando a hora")
-
            
             textCarinho.classList.add("carinhoVazio")
             textCarinho.innerHTML = `
@@ -203,8 +201,6 @@ function removerItem(event) {
 
 listaCarinho.addEventListener("click",removerItem )
 
-
-//Acessorio
 // ========Pesquisar =============
 
 let inputpesquisartop  = document.querySelector(".inputPesquisar");
@@ -218,7 +214,6 @@ let todos = document.querySelector(".todos")
 
 
 // pesquisa top 
-
 function informação(pesquisa) {
     let valorPesquisa  = inputpesquisartop.value.trim()
     let resultPesquisa  =[]
@@ -270,8 +265,6 @@ formPesquisa.addEventListener("submit", (event)=>{
     inputpesquisar.value = ""
 })
 
-
-
 //pesquisa nav
 function pesquisaCabecalho(event) {
     let itensMenu = event.target
@@ -290,7 +283,7 @@ todos.addEventListener("click", (event) =>{
     listarProdutos(produtos, listaProdutos)
 })
 
-
+//Carinho de compra.. 
 function addCarinho(event) {
 
     let addCarinho = event.target
@@ -301,7 +294,6 @@ function addCarinho(event) {
         let produto = produtos.find( product => product.id == pegarID )   
 
         carinho.push(produto)
-        console.log(carinho)
 
         listarProdutos(carinho, listaCarinho)
     }
