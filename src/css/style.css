@@ -132,7 +132,6 @@ body {
 .search-bar-container{
     margin-top: .5rem;
     display: none;
-    /* position: relative; */
     width: 100%;
 }
 .search{
@@ -254,6 +253,7 @@ main {
 
 .boxProdutos .produtos ul li .box_content p {
     font-size: .9rem;
+    min-height: 3.5rem;
     line-height: 1.7rem;
 }
 
@@ -289,21 +289,12 @@ main {
 .aside {
     
     width: 30%;
-    /* height: 20rem; */
-}
-
-.aside .box_pesquisar {
-    /* display: flex;
-    width: 100%;
-    margin-bottom: 1rem;
-    gap: .4rem; */
-
 }
 
 .aside .box_pesquisar form {
     display: flex;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: .4rem;
     gap: .4rem;
 
 }
@@ -355,7 +346,7 @@ main {
     font-size: 1.2rem;
     text-align: center;
     color: var(--gray-0);
-    margin-bottom: 1rem;
+    margin-bottom: .2rem;
     background: var(--cor-segundaria);
     display: flex;
     justify-content: space-around;    
