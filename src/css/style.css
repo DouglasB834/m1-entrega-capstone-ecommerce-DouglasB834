@@ -419,7 +419,7 @@ main {
 
 .carinhoDeCompras ul li button {
     display: flex;
-    width: 77%;
+    width: 41%;
     color: var(--gray-100);
     background: var(--gray-0);
     transition: .2s linear;
@@ -516,6 +516,10 @@ footer .container-footer{
         font-size: 75%;
     }
 
+    .carinhoDeCompras ul li button {
+            width: 55%;
+    }
+
 
 }
 
@@ -554,6 +558,11 @@ footer .container-footer{
     .cor{
         background: var(--gray-100);
     }
+
+    .carinhoDeCompras ul li button {
+        /* width: 77%; */
+    }
+
     .carinhoDeCompras{
         display: none ;
         position: absolute;
