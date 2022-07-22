@@ -147,6 +147,8 @@ function criarCarinho(itensCarinho ) {
     tagSpan.innerText   = `R$${ preco}`
     tagButton.innerHTML = `Remover Produto  <i class="fa fa-trash" aria-hidden="true"></i>`
     tagButton.id        = itensCarinho.id
+
+
     
     somarCarinho(carinho)
     divBoxImgCarrinho.appendChild(tagImg)
@@ -176,12 +178,12 @@ function removerItem(event) {
 
     if (indexItem.tagName == "BUTTON" || indexItem.tagName == "I") {  
         let idProduto = indexItem.id
-        
+        console.log(idProduto)
         valorCarinho.innerText  = `R$${0}`
         qtd_itens.innerText     = `${0}`
         
-        let indexProduto        = carinho.find( getID => getID.id == idProduto)   
-        
+        let indexProduto        = carinho.findIndex( getID => getID.id == idProduto)   
+        console.log()
         carinho.splice(indexProduto,1)
         
         listarProdutos(carinho, listaCarinho)
