@@ -198,7 +198,7 @@ main {
 }
 
 .boxProdutos .produtos ul li {
-    max-width: 262px;
+    width: 262px;
     border: .2rem solid transparent;
     transition: .1s linear;
     border-radius: .5rem .5rem 0 0;

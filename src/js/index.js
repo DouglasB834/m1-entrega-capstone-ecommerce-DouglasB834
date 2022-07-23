@@ -7,6 +7,7 @@ let qtd_itens       = document.querySelector(".qtd_itens");
 let valorCarinho    = document.querySelector(".total");
 let listaCabecalho  = document.querySelector(".listaCabecalho")
 let textCarinho     = document.createElement("div")
+let card            = document.querySelector(".card")
 let carinho         =[] ;
 let tagproduto      =[]
 
@@ -121,7 +122,7 @@ function criarCarinho(itensCarinho ) {
     qtd_itens.innerHTML     = ""
     qtd_itens.innerText     = `${carinho.length}`
     valorCarinho.innerHTML  = ""
-
+    card.innerText          = ` ${carinho.length}`
     img     =   itensCarinho.img
     nome    =   itensCarinho.nameItem
     preco   =   itensCarinho.value    
@@ -181,6 +182,7 @@ function removerItem(event) {
         console.log(idProduto)
         valorCarinho.innerText  = `R$${0}`
         qtd_itens.innerText     = `${0}`
+        card.innerText          = ` ${0}`
         
         let indexProduto        = carinho.findIndex( getID => getID.id == idProduto)   
         console.log()
