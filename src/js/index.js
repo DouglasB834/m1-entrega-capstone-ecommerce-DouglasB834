@@ -122,7 +122,7 @@ function criarCarinho(itensCarinho ) {
     qtd_itens.innerHTML     = ""
     qtd_itens.innerText     = `${carinho.length}`
     valorCarinho.innerHTML  = ""
-    card.innerText          = ` ${carinho.length}`
+    card.innerText          = `${carinho.length}`
     img     =   itensCarinho.img
     nome    =   itensCarinho.nameItem
     preco   =   itensCarinho.value    
@@ -145,7 +145,7 @@ function criarCarinho(itensCarinho ) {
     tagImg.src          =  img
     tagImg.alt          =  nome
     tagH4.innerText     =  nome
-    tagSpan.innerText   = `R$${ preco}`
+    tagSpan.innerText   = `R$${ preco}`.replace(".",",")
     tagButton.innerHTML = `Remover Produto  <i class="fa fa-trash" aria-hidden="true"></i>`
     tagButton.id        = itensCarinho.id
 
@@ -168,7 +168,7 @@ function somarCarinho(valorTotal) {
         let somar = valorTotal[key].value
         total +=somar
     }
-    valorCarinho.innerText = `R$${total.toFixed(2)}`
+    valorCarinho.innerText = `R$${total.toFixed(2)}`.replace(".",",")
     return total
    
 }
